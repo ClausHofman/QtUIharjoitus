@@ -27,7 +27,7 @@
      <string>Opiskelijan etunimi</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="studentFirstNamLlineEdit">
+   <widget class="QLineEdit" name="studentFirstNameLineEdit">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -70,7 +70,7 @@
      <string>Opiskelijan sukunimi</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="studentNumbeLlineEdit">
+   <widget class="QLineEdit" name="studentNumbeLineEdit">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -155,7 +155,7 @@
       <string>TextLabel</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="stickerstudentNumbeLabel">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -177,7 +177,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="printPushButton">
     <property name="geometry">
      <rect>
       <x>320</x>
@@ -202,7 +202,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -210,22 +210,6 @@
  </widget>
  <resources/>
  <connections>
-  <connection>
-   <sender>studentFirstNamLlineEdit</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>sticketFirstNameLabel</receiver>
-   <slot>setText(QString)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>54</x>
-     <y>83</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>54</x>
-     <y>184</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>studentLastNameLineEdit</sender>
    <signal>textChanged(QString)</signal>
@@ -239,22 +223,6 @@
     <hint type="destinationlabel">
      <x>228</x>
      <y>187</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>studentNumbeLlineEdit</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>label</receiver>
-   <slot>setText(QString)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>120</x>
-     <y>128</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>152</x>
-     <y>253</y>
     </hint>
    </hints>
   </connection>
