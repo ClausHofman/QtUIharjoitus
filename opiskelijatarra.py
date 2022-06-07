@@ -5,6 +5,7 @@
 
 from PyQt5 import QtWidgets, uic, QtPrintSupport # UI elements and ui builder
 from PyQt5.QtGui import QPainter, QTransform, QPixmap
+import os
 import sys # For accessing system parameters
 import code128Bcode
 
@@ -32,10 +33,15 @@ class Ui(QtWidgets.QMainWindow):
         self.studentNumberOutput = self.stickerstudentNumbeLabel
         self.studentNumberOutput.setText('')
 
+        # TODO: Disable print button until all fields are populated
+
         # SIGNALS
 
         # Print the sticker
         self.printPushButton.clicked.connect(self.printSticker)
+
+        # Load the picture of the student
+        self.addPicturePushButton.clicked.connect(self.loadPicture)
 
         # Signals for updating the student name
         self.firstNameInput.textChanged.connect(self.createFullName)
@@ -85,6 +91,17 @@ class Ui(QtWidgets.QMainWindow):
             # Close printer
             painter.end()
 
+    # Open a file dialog to choose file and place the picture to label
+    def loadPicture(self):
+
+        # Define what's the working directory
+        relativeWorkingDirectory = '\Pictures'
+        userProfilePath = os.path.expanduser('~')
+        absoluteWorkingDirectory = userProfilePath + relativeWorkingDirectory
+
+        # Create a file dialog
+        fileName, check = QtWidgets.QFileDialog.getOpenFileName(None, 'Valitse kuva', absoluteWorkingDirectory, 'Kuvatiedostot (*.jpeg *.png)')
+        # TODO: Make this ready tomorrow!
 
     # Concatenates first and last name and updates the sticker
     def createFullName(self):
